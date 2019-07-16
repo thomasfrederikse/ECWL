@@ -36,7 +36,6 @@ settings.gpd_return_period = 10.^(-1:0.025:3)';
 settings.yearlist = [2050;2100];
 settings.rcplist = [26;45;85];
 
-
 %% List of GESLA files and remove duplicate stations
 file_list = dir(strcat(settings.stat_dir,'stat*'));
 file_list = mod_remove_duplicates(file_list,settings);

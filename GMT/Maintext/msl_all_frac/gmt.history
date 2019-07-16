@@ -1,0 +1,10 @@
+# GMT 6 Session common arguments shelf
+BEGIN GMT 6.0.0
+B	5x+lAllowance minus expected MSL change (cm)
+J	X
+JX	X6.0c/3.0c
+R	g
+X	6.2c
+Y	-3.2cm
+@L	15
+END
