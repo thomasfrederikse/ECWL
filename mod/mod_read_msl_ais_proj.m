@@ -15,26 +15,12 @@
 % along with this program.  If not, see <http://www.gnu.org/licenses/>
 % ---------------------------------------------------------------------
 
-
-%% Read and pre-process GESLA data 
-
-
-clear all; close all; clc;
-addpath(genpath('~/Scripts/matlab/'));
-
-settings.gesla_dir = '~/Data/Extremes/GESLA2/';
-settings.stat_dir  = '~/Data/Extremes/Station_data_matlab/';
-settings.daily_obs_per_year = 250;
-settings.min_years = 20;
-
-%% List of GESLA files
-statlist = dir(settings.gesla_dir);
-statlist = statlist(4:end);
-
-%% Read all files
-parfor i=1:numel(statlist)
-   fprintf('Processing station %i... \n',i)
-   read_file  = strcat(statlist(i).folder,'/',statlist(i).name);
-   write_file = strcat(settings.stat_dir,'stat',sprintf('%04i',i),'.mat');
-   mod_read_gesla_station(read_file,write_file,settings);
+function [msl_proj] = mod_read_msl_ais_proj(settings)
+filename = strcat(settings.scenario_dir,'msl_rcp',num2str(settings.rcp),'_',num2str(settings.year),'.nc');
+msl_proj.lon      = double(ncread(filename,'x'));
+msl_proj.lat      = double(ncread(filename,'y'));
+msl_proj.AIS_ctb  = double(ncread(filename,'AIS'));
+msl_proj.msl_mean = double(ncread(filename,'total_slr'));
+msl_proj.msl_ste  = double(ncread(filename,'total_slr_ste'));
 end
+
