@@ -27,7 +27,6 @@ loc_scale_arr{1,8} = 'Shape (5th percentile)';
 loc_scale_arr{1,9} = 'Shape (50th percentile)';
 loc_scale_arr{1,10} = 'Shape (95th percentile)';
 
-
 %% Table 1: Schape, scale and location parameters
 for i=1:numel(result_array)
     loc_scale_arr{i+1,1} = upper(result_array(i).name);

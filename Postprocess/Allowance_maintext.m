@@ -39,8 +39,8 @@ scn_ant  = {'0','0.1','0','0.1','0','0.15','0.3','0','0.3','0.6'};
 scn_year = {'2050','2050','2050','2050','2100','2100','2100','2100','2100','2100'};
 
 hist_idx = [-inf,0.25:0.25:1.5,inf]';
-tr_idx = (abs(loc_array(:,2))<=30);
-nt_idx = (abs(loc_array(:,2))>30);
+tr_idx = (abs(loc_array(:,2))<=23.45);
+nt_idx = (abs(loc_array(:,2))>23.45);
 
 hist_ntr = zeros(numel(hist_idx)-1,2);
 hist_tr =  zeros(numel(hist_idx)-1,2);

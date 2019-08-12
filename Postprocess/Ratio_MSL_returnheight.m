@@ -45,8 +45,8 @@ for i = 1:numel(result_array)
 end
 
 hist_idx = [-inf,0.1,1,10,100,inf]';
-tr_idx = (abs(loc_array(:,2))<=30);
-nt_idx = (abs(loc_array(:,2))>30);
+tr_idx = (abs(loc_array(:,2))<=23.45);
+nt_idx = (abs(loc_array(:,2))>23.45);
 
 hist_ntr = zeros(numel(hist_idx)-1,2);
 hist_tr =  zeros(numel(hist_idx)-1,2);

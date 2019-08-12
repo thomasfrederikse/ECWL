@@ -28,7 +28,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
  - FP_thwaites: contains a netcdf with the sea-level fingerprint for Thwaites glacier
 
- - mod: contains modules files used by the other scripts
+ - mod: contains modules that are called by the other scripts
 
 
 ## How to use these scripts
