@@ -23,7 +23,7 @@ gmt set FONT_TITLE                     = 8p,Helvetica,black
 
 
 #gmt makecpt -CWhiteYellowOrangeRed.cpt -D -T0.0/1.8/0.1 > all_cpt.cpt
-gmt makecpt -Cviridis -D -T0/150/7.5 > all_cpt.cpt
+gmt makecpt -Cviridis -D -I -T0/150/7.5 > all_cpt.cpt
 
 J1=X6.0c/3.0c
 J2=X1c/3.0c
@@ -40,7 +40,7 @@ color1=#1f77b4
 color2=#2ca02c
 color3=#ff7f0e
 
-gmt psbasemap -J$J1 -Rg -Y15.05c -X0.3c -K -Bwesn+t"RCP2.6 0 cm"  > $ps
+gmt psbasemap -J$J1 -Rg -Y15.05c -X0.3c -K -Bwesn+t"RCP2.6 AIS: 0 cm"  > $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy all_RCP26_2050_0.txt -R -J -O -K -Sc$circrad -t35  -Call_cpt.cpt >> $ps
 gmt psbasemap -J$J2 -R$R2 -X6c -O -K -Byg25 -Bxg0.5 -Bwesn  >> $ps
@@ -48,7 +48,7 @@ gmt psxy  -R -J -SB$barwidth -N -G$color1  -O -K hist_all_RCP26_2050_0.txt >> $p
 gmt psxy  -R -J -SB$barwidth -N -G$color2  -O -K hist_ntr_RCP26_2050_0.txt >> $ps
 gmt psxy  -R -J -SB$barwidth -N -G$color3  -O -K hist_tr_RCP26_2050_0.txt >> $ps
 
-gmt psbasemap -J$J1 -Rg -X$xjump -O -K -Bwesn+t"RCP8.5 0 cm"  >> $ps
+gmt psbasemap -J$J1 -Rg -X$xjump -O -K -Bwesn+t"RCP8.5 AIS: 0 cm"  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy all_RCP85_2050_0.txt -R -J -O -K -Sc$circrad -t35  -Call_cpt.cpt >> $ps
 gmt psbasemap -J$J2 -R$R2 -X6c -O -K -Bychistannots.txt -Bxg0.5 -BwEsn  >> $ps
@@ -56,7 +56,7 @@ gmt psxy  -R -J -SB$barwidth -N -G$color1  -O -K hist_all_RCP85_2050_0.txt >> $p
 gmt psxy  -R -J -SB$barwidth -N -G$color2  -O -K hist_ntr_RCP85_2050_0.txt >> $ps
 gmt psxy  -R -J -SB$barwidth -N -G$color3  -O -K hist_tr_RCP85_2050_0.txt >> $ps
 
-gmt psbasemap -J$J1 -Rg -Y$yjump -X$xback -O -K -Bwesn+t"RCP2.6 10 cm"  >> $ps
+gmt psbasemap -J$J1 -Rg -Y$yjump -X$xback -O -K -Bwesn+t"RCP2.6 AIS: 10 cm"  >> $ps
 echo "180 100 2046-2065" |  gmt pstext -D-3.15c/0c -R -J -N -F+f8,Helvetica-Bold+jCM+a90 -O -K >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy all_RCP26_2050_0.1.txt -R -J -O -K -Sc$circrad -t35  -Call_cpt.cpt  >> $ps
@@ -65,7 +65,7 @@ gmt psxy  -R -J -SB$barwidth -N -G$color1  -O -K hist_all_RCP26_2050_0.1.txt >> 
 gmt psxy  -R -J -SB$barwidth -N -G$color2  -O -K hist_ntr_RCP26_2050_0.1.txt >> $ps
 gmt psxy  -R -J -SB$barwidth -N -G$color3  -O -K hist_tr_RCP26_2050_0.1.txt >> $ps
 
-gmt psbasemap -J$J1 -Rg -X$xjump -O -K -Bwesn+t"RCP8.5 10 cm"  >> $ps
+gmt psbasemap -J$J1 -Rg -X$xjump -O -K -Bwesn+t"RCP8.5 AIS: 10 cm"  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy all_RCP85_2050_0.1.txt -R -J -O -K -Sc$circrad -t35  -Call_cpt.cpt  >> $ps
 
@@ -76,7 +76,7 @@ gmt psxy  -R -J -SB$barwidth -N -G$color3  -O -K hist_tr_RCP85_2050_0.1.txt >> $
 
 ### 2100
 
-gmt psbasemap -J$J1 -Rg -Y$yjump2  -X$xback -O -K -Bwesn+t"RCP2.6 0 cm"  >> $ps
+gmt psbasemap -J$J1 -Rg -Y$yjump2  -X$xback -O -K -Bwesn+t"RCP2.6 AIS: 0 cm"  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy all_RCP26_2100_0.txt -R -J -O -K -Sc$circrad -t35  -Call_cpt.cpt  >> $ps
 gmt psbasemap -J$J2 -R$R2 -X6c -O -K -Byg25 -Bxg0.5 -Bwesn  >> $ps
@@ -84,7 +84,7 @@ gmt psxy  -R -J -SB$barwidth -N -G$color1  -O -K hist_all_RCP26_2100_0.txt >> $p
 gmt psxy  -R -J -SB$barwidth -N -G$color2  -O -K hist_ntr_RCP26_2100_0.txt >> $ps
 gmt psxy  -R -J -SB$barwidth -N -G$color3  -O -K hist_tr_RCP26_2100_0.txt >> $ps
 
-gmt psbasemap -J$J1 -Rg -X$xjump -O -K -Bwesn+t"RCP8.5 0 cm"  >> $ps
+gmt psbasemap -J$J1 -Rg -X$xjump -O -K -Bwesn+t"RCP8.5 AIS: 0 cm"  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy all_RCP85_2100_0.txt -R -J -O -K -Sc$circrad -t35  -Call_cpt.cpt  >> $ps
 gmt psbasemap -J$J2 -R$R2 -X6c -O -K -Bychistannots.txt -Bxg0.5 -BwEsn  >> $ps
@@ -92,7 +92,7 @@ gmt psxy  -R -J -SB$barwidth -N -G$color1  -O -K hist_all_RCP85_2100_0.txt >> $p
 gmt psxy  -R -J -SB$barwidth -N -G$color2  -O -K hist_ntr_RCP85_2100_0.txt >> $ps
 gmt psxy  -R -J -SB$barwidth -N -G$color3  -O -K hist_tr_RCP85_2100_0.txt >> $ps
 
-gmt psbasemap -J$J1 -Rg -Y$yjump -X$xback -O -K -Bwesn+t"RCP2.6 15 cm"  >> $ps
+gmt psbasemap -J$J1 -Rg -Y$yjump -X$xback -O -K -Bwesn+t"RCP2.6 AIS: 15 cm"  >> $ps
 echo "180 0 2081-2100" |  gmt pstext -D-3.15c/0c -R -J -N -F+f8,Helvetica-Bold+jCM+a90 -O -K >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy all_RCP26_2100_0.15.txt -R -J -O -K -Sc$circrad -t35  -Call_cpt.cpt  >> $ps
@@ -101,7 +101,7 @@ gmt psxy  -R -J -SB$barwidth -N -G$color1  -O -K hist_all_RCP26_2100_0.15.txt >>
 gmt psxy  -R -J -SB$barwidth -N -G$color2  -O -K hist_ntr_RCP26_2100_0.15.txt >> $ps
 gmt psxy  -R -J -SB$barwidth -N -G$color3  -O -K hist_tr_RCP26_2100_0.15.txt >> $ps
 
-gmt psbasemap -J$J1 -Rg -X$xjump -O -K -Bwesn+t"RCP8.5 30 cm"  >> $ps
+gmt psbasemap -J$J1 -Rg -X$xjump -O -K -Bwesn+t"RCP8.5 AIS: 30 cm"  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy all_RCP85_2100_0.3.txt -R -J -O -K -Sc$circrad -t35  -Call_cpt.cpt  >> $ps
 gmt psbasemap -J$J2 -R$R2 -X6c -O -K -Bychistannots.txt -Bxg0.5 -BwEsn  >> $ps
@@ -110,7 +110,7 @@ gmt psxy  -R -J -SB$barwidth -N -G$color2  -O -K hist_ntr_RCP85_2100_0.3.txt >> 
 gmt psxy  -R -J -SB$barwidth -N -G$color3  -O -K hist_tr_RCP85_2100_0.3.txt >> $ps
 
 
-gmt psbasemap -J$J1 -Rg -Y$yjump -X$xback -O -K -Bwesn+t"RCP2.6 30 cm"  >> $ps
+gmt psbasemap -J$J1 -Rg -Y$yjump -X$xback -O -K -Bwesn+t"RCP2.6 AIS: 30 cm"  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy all_RCP26_2100_0.3.txt -R -J -O -K -Sc$circrad -t35  -Call_cpt.cpt  >> $ps
 gmt psscale  -Dx0c/-0.45c+w9.5c/0.3c+ef+h-R -J -Np -Call_cpt.cpt  -B10  -O -By+l'cm' -Bx+l'Al@-100@-' -S -K >> $ps
@@ -119,7 +119,7 @@ gmt psxy  -R -J -SB$barwidth -N -G$color1  -O -K hist_all_RCP26_2100_0.3.txt >> 
 gmt psxy  -R -J -SB$barwidth -N -G$color2  -O -K hist_ntr_RCP26_2100_0.3.txt >> $ps
 gmt psxy  -R -J -SB$barwidth -N -G$color3  -O -K hist_tr_RCP26_2100_0.3.txt >> $ps
 
-gmt psbasemap -J$J1 -Rg -X$xjump -O -K -Bwesn+t"RCP8.5 60 cm"  >> $ps
+gmt psbasemap -J$J1 -Rg -X$xjump -O -K -Bwesn+t"RCP8.5 AIS: 60 cm"  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy all_RCP85_2100_0.6.txt -R -J -O -K -Sc$circrad -t35  -Call_cpt.cpt  >> $ps
 gmt psbasemap -J$J2 -R$R2 -X6c -O -K -Bychistannots.txt -Bxg0.5 -BwEsn  >> $ps

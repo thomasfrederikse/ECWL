@@ -37,7 +37,7 @@ orf1=#e6550d
 orf2=#fd8d3c
 orf3=#fdae6b
 # Constants
-Bxopt=xa4g3
+Bxopt=xa4
 Jexa=X4.8cl/2.4c
 Jslr=X1.2c/2.4c
 Jopt=X3.6cl/2.4c
@@ -55,7 +55,7 @@ gmt set MAP_LABEL_OFFSET=0p
 gmt set MAP_TITLE_OFFSET=-0.15c
 gmt set MAP_ANNOT_OFFSET_PRIMARY=0.5p
 
-gmt psbasemap -J$Jmap -Rg -Y4.4c -X0.9c -K -BWeSn+t"Station locations" -Bx60f60g60 -By30f30g30 > $ps
+gmt psbasemap -J$Jmap -Rg -Y4.4c -X0.9c -K -BWeSn+t"Station sites" -Bx60 -By30 > $ps
 gmt grdimage -R -J -O -K 30msk.nc -t60 -Cmsk.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
 gmt psxy stat_locs.txt -R -J -O -Sc0.05i -K -G#1f77b4 -Wthinnest >> $ps
@@ -66,38 +66,39 @@ gmt set MAP_LABEL_OFFSET=4p
 gmt set MAP_TITLE_OFFSET=0.05c
 gmt set MAP_ANNOT_OFFSET_PRIMARY=1.7p
 
-gmt psbasemap -O -K -R1/1000/0/3.3 -J$Jexa -Y-$yjump -B$Bxopt+l'Return period (yr)' -By0.5g0.25+l"Height above MSL (m)" -BWeSn+t'Example' >> $ps
-gmt psxy  -R -J -W1p,150/150/150,5_1.5:2 -O -K af_2.txt >> $ps
-gmt psxy  -R -J -W1p,150/150/150,5_1.5:2 -O -K af_3.txt >> $ps
+gmt psbasemap -O -K -R1/1000/0/3.3 -J$Jexa -Y-$yjump -B$Bxopt+l'Return period (yr)' -By1+l"Height (m)" -BWeSn+t'Example' >> $ps
+gmt psxy  -R -J -W0.5p,160/160/160,5_1.5:2 -O -K af_2.txt >> $ps
+gmt psxy  -R -J -W0.5p,160/160/160,5_1.5:2 -O -K af_3.txt >> $ps
 
 gmt psxy  -R -J -W1p,black   -O -K ex_gpd_pd.txt  >> $ps
 gmt psxy  -R -J -W1p,$color4 -O -K ex_gpd_fut.txt >> $ps
 
 # Visualize AF
-gmt psxy  -R -J -W1p,$color3+ve0.15c+a60+g$color3         -O -K af_1.txt >> $ps
+gmt psxy  -R -J -W1p,$color3+a60+g$color3         -O -K af_1.txt >> $ps
 gmt psxy  -R -J -W1p,$color3+vb0.15c+t-0.42c+a60+g$color3 -O -K af_1.txt >> $ps
-gmt psxy  -R -J -W1p,150/150/150,5_1.5:2 -O -K af_2.txt >> $ps
-gmt psxy  -R -J -W1p,150/150/150,5_1.5:2 -O -K af_3.txt >> $ps
+gmt psxy  -R -J -W0.5p,160/160/160,5_1.5:2 -O -K af_2.txt >> $ps
+gmt psxy  -R -J -W0.5p,160/160/160,5_1.5:2 -O -K af_3.txt >> $ps
 
 # Visualize Allowance
-gmt psxy  -R -J -W1p,$color1+v0.15c+a60+g$color1 -O -K all_1.txt >> $ps
-echo -e "1.6 1.32 \n 2.9 1.32" | gmt psxy -R -J -O -K -W1.0p,black >> $ps
-echo "4.4 1.32 Present-day return curve" | gmt pstext -R -J -F+f8+jLM -O -K >> $ps
-echo -e "1.6 0.98 \n 2.9 0.98" | gmt psxy -R -J -O -K -W1.0p,$color4 >> $ps
-echo "4.4 0.98 Future return curve" | gmt pstext -R -J -F+f8+jLM -O -K >> $ps
-echo -e "1.6 0.62 \n 2.8 0.62" | gmt psxy -R -J -O -K -W1p,$color3+vb0.15c+t-0.05c+a60+g$color3 >> $ps
-echo -e "1.6 0.62 \n 2.9 0.62" | gmt psxy -R -J -O -K -W1p,$color3+ve0.15c+t-0.02c+a60+g$color3 >> $ps
-echo "4.4 0.62 AF@-100@-" | gmt pstext -R -J -F+f8+jLM -O -K >> $ps
-echo -e "1.6 0.28 \n 2.8 0.28" | gmt psxy -R -J -O -K -W1p,$color1+vb0.15c+t-0.05c+a60+g$color1 >> $ps
-echo -e "1.6 0.28 \n 2.9 0.28" | gmt psxy -R -J -O -K -W1p,$color1+ve0.15c+t-0.02c+a60+g$color1 >> $ps
-echo "4.4 0.28 Al@-100@-" | gmt pstext -R -J -F+f8+jLM -O -K >> $ps
+gmt psxy  -R -J -W1p,$color1+ve0.15c+a60+g$color1 -O -K all_1.txt >> $ps
+
+echo -e "1.2 1.32 \n 2.1 1.32" | gmt psxy -R -J -O -K -W1.0p,black >> $ps
+echo "2.3 1.32 Present-day return curve" | gmt pstext -R -J -F+f8+jLM -O -K >> $ps
+echo -e "1.2 0.98 \n 2.1 0.98" | gmt psxy -R -J -O -K -W1.0p,$color4 >> $ps
+echo "2.3 0.98 Future return curve" | gmt pstext -R -J -F+f8+jLM -O -K >> $ps
+echo -e "1.2 0.62 \n 2.0 0.62" | gmt psxy -R -J -O -K -W1p,$color3+a60+g$color3 >> $ps
+echo -e "1.2 0.62 \n 2.1 0.62" | gmt psxy -R -J -O -K -W1p,$color3+ve0.15c+t-0.02c+a60+g$color3 >> $ps
+echo "2.3 0.62 AF@-100@-" | gmt pstext -R -J -F+f8+jLM -O -K >> $ps
+echo -e "1.2 0.28 \n 2.0 0.28" | gmt psxy -R -J -O -K -W1p,$color1+a60+g$color1 >> $ps
+echo -e "1.2 0.28 \n 2.1 0.28" | gmt psxy -R -J -O -K -W1p,$color1+ve0.15c+t-0.02c+a60+g$color1 >> $ps
+echo "2.3 0.28 Al@-100@-" | gmt pstext -R -J -F+f8+jLM -O -K >> $ps
 
 gmt set MAP_LABEL_OFFSET=2.5p
 
 # Brest
 i=113
 # Trends
-gmt psbasemap -O -K -R0/10/0/5.6 -J$Jslr -X$xjumpl -Y$yjump -Bxctrendannots.txt -By0.8g0.4+l"Height above MSL (m)" -BWesn >> $ps
+gmt psbasemap -O -K -R0/10/0/6 -J$Jslr -X$xjumpl -Y$yjump -Bxctrendannots.txt -By1+l"Height (m)" -BWesn >> $ps
 gmt psxy -R -J -Sb$barwidth -N -G$purf2  -O -K slr_2050_26_0_$i.txt >> $ps
 gmt psxy -R -J -Sb$barwidth -N -G$purf1  -O -K slr_2050_26_0.1_$i.txt >> $ps
 gmt psxy -R -J -Sb$barwidth -N -G$redf2  -O -K slr_2050_85_0_$i.txt >> $ps
@@ -118,7 +119,7 @@ gmt psxy  -R -J  -N -O -K slr_2100_26_0.3_$i.txt -Ey$errwidth  >> $ps
 gmt psxy  -R -J  -N -O -K slr_2100_85_0_$i.txt -Ey$errwidth  >> $ps
 gmt psxy  -R -J  -N -O -K slr_2100_85_0.3_$i.txt -Ey$errwidth  >> $ps
 gmt psxy  -R -J  -N -O -K slr_2100_85_0.6_$i.txt -Ey$errwidth  >> $ps
-gmt psbasemap -O -K -R1/1000/0/5.6 -J$Jopt -X$xslr -B$Bxopt -Byg0.4 -Bwesn+t'1 Brest' >> $ps
+gmt psbasemap -O -K -R1/1000/0/6 -J$Jopt -X$xslr -B$Bxopt -Bwesn+t'1 Brest' >> $ps
 gmt psxy  -R -J -L -t80 -N -Gblack   -O -K rp_pd_ste_$i.txt  >> $ps
 # Allowances
 gmt psxy  -R -J -W0.75p,$bluef3 -O -K rp_2100_26_0_rc_best_$i.txt  >> $ps
@@ -139,7 +140,7 @@ gmt psxy  -R -J -O -K -Sx0.12c rp_pd_obs_$i.txt  >> $ps
 
 # Galveston
 i=352
-gmt psbasemap -O -K -R0/10/0/7.2 -J$Jslr -X$xjumps -Bxctrendannots.txt -By0.9g0.45 -BWesn >> $ps
+gmt psbasemap -O -K -R0/10/0/9 -J$Jslr -X$xjumps -Bxctrendannots.txt -By2 -BWesn >> $ps
 gmt psxy -R -J -Sb$barwidth -N -G$purf2  -O -K slr_2050_26_0_$i.txt >> $ps
 gmt psxy -R -J -Sb$barwidth -N -G$purf1  -O -K slr_2050_26_0.1_$i.txt >> $ps
 gmt psxy -R -J -Sb$barwidth -N -G$redf2  -O -K slr_2050_85_0_$i.txt >> $ps
@@ -160,7 +161,7 @@ gmt psxy  -R -J  -N -O -K slr_2100_26_0.3_$i.txt -Ey$errwidth  >> $ps
 gmt psxy  -R -J  -N -O -K slr_2100_85_0_$i.txt -Ey$errwidth  >> $ps
 gmt psxy  -R -J  -N -O -K slr_2100_85_0.3_$i.txt -Ey$errwidth  >> $ps
 gmt psxy  -R -J  -N -O -K slr_2100_85_0.6_$i.txt -Ey$errwidth  >> $ps
-gmt psbasemap -O -K -R1/1000/0/7.2 -J$Jopt -X$xslr -B$Bxopt -By0.9g0.45 -Bwesn+t'2 Galveston' >> $ps
+gmt psbasemap -O -K -R1/1000/0/9 -J$Jopt -X$xslr -B$Bxopt -Bwesn+t'2 Galveston' >> $ps
 gmt psxy  -R -J -L -t80 -N -Gblack   -O -K rp_pd_ste_$i.txt  >> $ps
 # Allowances
 gmt psxy  -R -J -W0.75p,$bluef3 -O -K rp_2100_26_0_rc_best_$i.txt  >> $ps
@@ -180,7 +181,7 @@ gmt psxy  -R -J -O -K -Sx0.15c rp_pd_obs_$i.txt  >> $ps
 #### L2
 # Gan
 i=356
-gmt psbasemap -O -K -R0/10/0/2.8 -J$Jslr -X$xback -Y-$yjump -Bxctrendannots.txt -By0.4g0.2+l"Height above MSL (m)" -BWesn >> $ps
+gmt psbasemap -O -K -R0/10/0/3 -J$Jslr -X$xback -Y-$yjump -Bxctrendannots.txt -By1+l"Height (m)" -BWesn >> $ps
 gmt psxy -R -J -Sb$barwidth -N -G$purf2  -O -K slr_2050_26_0_$i.txt >> $ps
 gmt psxy -R -J -Sb$barwidth -N -G$purf1  -O -K slr_2050_26_0.1_$i.txt >> $ps
 gmt psxy -R -J -Sb$barwidth -N -G$redf2  -O -K slr_2050_85_0_$i.txt >> $ps
@@ -201,7 +202,7 @@ gmt psxy  -R -J  -N -O -K slr_2100_26_0.3_$i.txt -Ey$errwidth  >> $ps
 gmt psxy  -R -J  -N -O -K slr_2100_85_0_$i.txt -Ey$errwidth  >> $ps
 gmt psxy  -R -J  -N -O -K slr_2100_85_0.3_$i.txt -Ey$errwidth  >> $ps
 gmt psxy  -R -J  -N -O -K slr_2100_85_0.6_$i.txt -Ey$errwidth  >> $ps
-gmt psbasemap -O -K -R1/1000/0/2.8 -J$Jopt -X$xslr  -B$Bxopt+l'Return period (yr)' -By0.4g0.2 -BweSn+t'3 Gan (Maldives)' >> $ps
+gmt psbasemap -O -K -R1/1000/0/3 -J$Jopt -X$xslr  -B$Bxopt+l'Return period (yr)' -BweSn+t'3 Gan (Maldives)' >> $ps
 gmt psxy  -R -J -L -t80 -N -Gblack   -O -K rp_pd_ste_$i.txt  >> $ps
 # Allowances
 gmt psxy  -R -J -W0.75p,$bluef3 -O -K rp_2100_26_0_rc_best_$i.txt  >> $ps
@@ -221,7 +222,7 @@ gmt psxy  -R -J -O -K -Sx0.15c rp_pd_obs_$i.txt  >> $ps
 
 # Saipan
 i=1009
-gmt psbasemap -O -K -R0/10/0/5.6 -J$Jslr -X$xjumps -Bxctrendannots.txt -By0.8g0.4 -BWesn >> $ps
+gmt psbasemap -O -K -R0/10/0/6 -J$Jslr -X$xjumps -Bxctrendannots.txt -By1 -BWesn >> $ps
 gmt psxy -R -J -Sb$barwidth -N -G$purf2  -O -K slr_2050_26_0_$i.txt >> $ps
 gmt psxy -R -J -Sb$barwidth -N -G$purf1  -O -K slr_2050_26_0.1_$i.txt >> $ps
 gmt psxy -R -J -Sb$barwidth -N -G$redf2  -O -K slr_2050_85_0_$i.txt >> $ps
@@ -242,8 +243,7 @@ gmt psxy  -R -J  -N -O -K slr_2100_26_0.3_$i.txt -Ey$errwidth  >> $ps
 gmt psxy  -R -J  -N -O -K slr_2100_85_0_$i.txt -Ey$errwidth  >> $ps
 gmt psxy  -R -J  -N -O -K slr_2100_85_0.3_$i.txt -Ey$errwidth  >> $ps
 gmt psxy  -R -J  -N -O -K slr_2100_85_0.6_$i.txt -Ey$errwidth  >> $ps
-
-gmt psbasemap -O -K -R1/1000/0/5.6 -J$Jopt -X$xslr -B$Bxopt+l'Return period (yr)' -By0.8g0.4 -BweSn+t'4 Saipan' >> $ps
+gmt psbasemap -O -K -R1/1000/0/6 -J$Jopt -X$xslr -B$Bxopt+l'Return period (yr)' -BweSn+t'4 Saipan' >> $ps
 gmt psxy  -R -J -L -t80 -N -Gblack   -O -K rp_pd_ste_$i.txt  >> $ps
 # Allowances
 gmt psxy  -R -J -W0.75p,$bluef3 -O -K rp_2100_26_0_rc_best_$i.txt  >> $ps

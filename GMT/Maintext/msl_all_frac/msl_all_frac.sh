@@ -22,7 +22,7 @@ gmt set FONT_LOGO                      = 8p,Helvetica,black
 gmt set FONT_TITLE                     = 8p,Helvetica,black
 
 
-gmt makecpt -Csolar.cpt -D -T0/50/1.25 > frac_cpt.cpt
+gmt makecpt -Csolar.cpt -I -D -T0/50/1.25 > frac_cpt.cpt
 
 J1=X6.0c/3.0c
 J2=X1c/3.0c

@@ -1,11 +1,11 @@
 %!PS-Adobe-3.0
 %%BoundingBox: 0 0 241 369
 %%HiResBoundingBox: 0 0 240.9450 368.5040             
-%%Title: GMT v6.0.0 [64-bit] Document from grdimage
+%%Title: GMT v6.0.0rc4 [64-bit] Document from grdimage
 %%Creator: GMT6
 %%For: unknown
 %%DocumentNeededResources: font Helvetica
-%%CreationDate: Thu Jul 11 17:52:33 2019
+%%CreationDate: Tue Nov 19 16:50:54 2019
 %%LanguageLevel: 2
 %%DocumentData: Clean7Bit
 %%Orientation: Portrait
@@ -336,9 +336,7 @@ end
   n 0 eq {PSL_CT_drawline} if
 } def
 /PSL_CT_textline
-{ /psl_fnt PSL_fnt k get def
-  psl_fnt (FS) search {pop pop pop /PSL_fmode 2 def} {pop /PSL_fmode 1 def} ifelse
-  psl_fnt cvx exec
+{ PSL_fnt k get cvx exec
   /PSL_height PSL_heights k get def
   PSL_placetext	{PSL_CT_placelabel} if
   PSL_clippath {PSL_CT_clippath} if
@@ -594,9 +592,7 @@ end
   /psl_xp PSL_txt_x psl_k get def
   /psl_yp PSL_txt_y psl_k get def
   /psl_label PSL_label_str psl_k get def
-  /psl_fnt PSL_label_font psl_k get def
-  psl_fnt cvx exec
-  psl_fnt (FS) search {pop pop pop /PSL_fmode 2 def} {pop /PSL_fmode 1 def} ifelse
+  PSL_label_font psl_k get cvx exec
   /PSL_height PSL_heights psl_k get def
   /psl_boxH PSL_height PSL_gap_y 2 mul add def
   /PSL_just PSL_label_justify psl_k get def
@@ -639,8 +635,7 @@ end
 {
     V psl_xp psl_yp T psl_angle R
     psl_SW PSL_justx mul psl_y0 M
-    psl_label dup sd neg 0 exch G
-    PSL_fmode 1 eq {show} {false charpath V S U fs N} ifelse
+    psl_label dup sd neg 0 exch G show
     U
 } def
 /PSL_nclip 0 def
@@ -662,7 +657,7 @@ V 0.06 0.06 scale
 
 /PSL_page_xsize 4016 def
 /PSL_page_ysize 6142 def
-/PSL_completion {} def
+/PSL_plot_completion {} def
 /PSL_movie_completion {} def
 %PSL_End_Header
 gsave
@@ -672,7 +667,7 @@ O0
 142 5055 TM
 
 % PostScript produced by:
-%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2050.nc?total_slr[0] -Q -JX4.0c/2.0c -Rg -Y10.7c -X0.3c -K '-Bwesn+tRCP2.6 0 cm' -nn -Cmidcpt.cpt
+%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2050.nc?total_slr[0] -Q -JX4.0c/2.0c -Rg -Y10.7c -X0.3c -K '-Bwesn+tRCP2.6 AIS: 0 cm' -nn -Cmidcpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %GMTBoundingBox: 8.50394 303.307 113.386 56.6929
 %%BeginObject PSL_Layer_1
@@ -761,7 +756,7 @@ P S
 (100°) sh add def
 945 945 PSL_H_y add M
 0 A
-(RCP2.6 0 cm) bc Z
+(RCP2.6 AIS: 0 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -6673,7 +6668,7 @@ O0
 1937 0 TM
 
 % PostScript produced by:
-%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp85_2050.nc?total_slr[0] -Q -JX4.0c/2.0c -Rg -X4.1c -O -K '-Bwesn+tRCP8.5 0cm' -nn -Cmidcpt.cpt
+%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp85_2050.nc?total_slr[0] -Q -JX4.0c/2.0c -Rg -X4.1c -O -K '-Bwesn+tRCP8.5 AIS: 0cm' -nn -Cmidcpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_4
 0 setlinecap
@@ -6762,7 +6757,7 @@ P S
 (100°) sh add def
 945 945 PSL_H_y add M
 0 A
-(RCP8.5 0cm) bc Z
+(RCP8.5 AIS: 0cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -12674,7 +12669,7 @@ O0
 -1937 -1110 TM
 
 % PostScript produced by:
-%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2050.nc?total_slr[2] -Q -JX4.0c/2.0c -Rg -Y-2.35c -X-4.1c -O -K '-Bwesn+tRCP2.6 10 cm' -nn -Cmidcpt.cpt
+%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2050.nc?total_slr[2] -Q -JX4.0c/2.0c -Rg -Y-2.35c -X-4.1c -O -K '-Bwesn+tRCP2.6 AIS: 10 cm' -nn -Cmidcpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_7
 0 setlinecap
@@ -12762,7 +12757,7 @@ P S
 (100°) sh add def
 945 945 PSL_H_y add M
 0 A
-(RCP2.6 10 cm) bc Z
+(RCP2.6 AIS: 10 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -18690,7 +18685,7 @@ O0
 1937 0 TM
 
 % PostScript produced by:
-%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp85_2050.nc?total_slr[2] -Q -JX4.0c/2.0c -Rg -X4.1c -O -K '-Bwesn+tRCP8.5 10 cm' -nn -Cmidcpt.cpt
+%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp85_2050.nc?total_slr[2] -Q -JX4.0c/2.0c -Rg -X4.1c -O -K '-Bwesn+tRCP8.5 AIS: 10 cm' -nn -Cmidcpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_11
 0 setlinecap
@@ -18781,7 +18776,7 @@ P S
 (100°) sh add def
 945 945 PSL_H_y add M
 0 A
-(RCP8.5 10 cm) bc Z
+(RCP8.5 AIS: 10 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -24693,7 +24688,7 @@ O0
 -1937 -1299 TM
 
 % PostScript produced by:
-%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2100.nc?total_slr[0] -Q -JX4.0c/2.0c -Rg -Y-2.75c -X-4.1c -O -K '-Bwesn+tRCP2.6 0 cm' -nn -Cendcpt.cpt
+%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2100.nc?total_slr[0] -Q -JX4.0c/2.0c -Rg -Y-2.75c -X-4.1c -O -K '-Bwesn+tRCP2.6 AIS: 0 cm' -nn -Cendcpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_14
 0 setlinecap
@@ -24790,7 +24785,7 @@ P S
 (100°) sh add def
 945 945 PSL_H_y add M
 0 A
-(RCP2.6 0 cm) bc Z
+(RCP2.6 AIS: 0 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -30702,7 +30697,7 @@ O0
 1937 0 TM
 
 % PostScript produced by:
-%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp85_2100.nc?total_slr[0] -Q -JX4.0c/2.0c -Rg -X4.1c -O -K '-Bwesn+tRCP8.5 0 cm' -nn -Cendcpt.cpt
+%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp85_2100.nc?total_slr[0] -Q -JX4.0c/2.0c -Rg -X4.1c -O -K '-Bwesn+tRCP8.5 AIS: 0 cm' -nn -Cendcpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_17
 0 setlinecap
@@ -30805,7 +30800,7 @@ P S
 (100°) sh add def
 945 945 PSL_H_y add M
 0 A
-(RCP8.5 0 cm) bc Z
+(RCP8.5 AIS: 0 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -36717,7 +36712,7 @@ O0
 -1937 -1110 TM
 
 % PostScript produced by:
-%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2100.nc?total_slr[3] -Q -JX4.0c/2.0c -Rg -Y-2.35c -X-4.1c -O -K '-Bwesn+tRCP2.6 15 cm' -nn -Cendcpt.cpt
+%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2100.nc?total_slr[3] -Q -JX4.0c/2.0c -Rg -Y-2.35c -X-4.1c -O -K '-Bwesn+tRCP2.6 AIS: 15 cm' -nn -Cendcpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_20
 0 setlinecap
@@ -36814,7 +36809,7 @@ P S
 (100°) sh add def
 945 945 PSL_H_y add M
 0 A
-(RCP2.6 15 cm) bc Z
+(RCP2.6 AIS: 15 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -42742,7 +42737,7 @@ O0
 1937 0 TM
 
 % PostScript produced by:
-%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp85_2100.nc?total_slr[5] -Q -JX4.0c/2.0c -Rg -X4.1c -O -K '-Bwesn+tRCP8.5 30 cm' -nn -Cendcpt.cpt
+%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp85_2100.nc?total_slr[5] -Q -JX4.0c/2.0c -Rg -X4.1c -O -K '-Bwesn+tRCP8.5 AIS: 30 cm' -nn -Cendcpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_24
 0 setlinecap
@@ -42854,7 +42849,7 @@ P S
 (100°) sh add def
 945 945 PSL_H_y add M
 0 A
-(RCP8.5 30 cm) bc Z
+(RCP8.5 AIS: 30 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -48766,7 +48761,7 @@ O0
 -1937 -1110 TM
 
 % PostScript produced by:
-%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2100.nc?total_slr[5] -Q -JX4.0c/2.0c -Rg -Y-2.35c -X-4.1c -O -K '-Bwesn+tRCP2.6 30 cm' -nn -Cendcpt.cpt
+%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2100.nc?total_slr[5] -Q -JX4.0c/2.0c -Rg -Y-2.35c -X-4.1c -O -K '-Bwesn+tRCP2.6 AIS: 30 cm' -nn -Cendcpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_27
 0 setlinecap
@@ -48868,7 +48863,7 @@ P S
 (100°) sh add def
 945 945 PSL_H_y add M
 0 A
-(RCP2.6 30 cm) bc Z
+(RCP2.6 AIS: 30 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -54780,7 +54775,7 @@ O0
 1937 0 TM
 
 % PostScript produced by:
-%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp85_2100.nc?total_slr[7] -Q -JX4.0c/2.0c -Rg -X4.1c -O -K '-Bwesn+tRCP8.5 60 cm' -nn -Cendcpt.cpt
+%@GMT: gmt grdimage /Users/tfrederi/Data/Extremes/Paper/msl_scenarios/msl_rcp85_2100.nc?total_slr[7] -Q -JX4.0c/2.0c -Rg -X4.1c -O -K '-Bwesn+tRCP8.5 AIS: 60 cm' -nn -Cendcpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_30
 0 setlinecap
@@ -54896,7 +54891,7 @@ P S
 (100°) sh add def
 945 945 PSL_H_y add M
 0 A
-(RCP8.5 60 cm) bc Z
+(RCP8.5 AIS: 60 cm) bc Z
 %%EndObject
 0 A
 FQ

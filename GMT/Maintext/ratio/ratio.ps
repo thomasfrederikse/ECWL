@@ -1,11 +1,11 @@
 %!PS-Adobe-3.0
 %%BoundingBox: 0 0 442 317
 %%HiResBoundingBox: 0 0 442.2050 317.4800             
-%%Title: GMT v6.0.0 [64-bit] Document from psbasemap
+%%Title: GMT v6.0.0rc4 [64-bit] Document from psbasemap
 %%Creator: GMT6
 %%For: unknown
 %%DocumentNeededResources: font Helvetica
-%%CreationDate: Fri Jul 12 17:53:03 2019
+%%CreationDate: Tue Nov 19 16:52:39 2019
 %%LanguageLevel: 2
 %%DocumentData: Clean7Bit
 %%Orientation: Portrait
@@ -336,9 +336,7 @@ end
   n 0 eq {PSL_CT_drawline} if
 } def
 /PSL_CT_textline
-{ /psl_fnt PSL_fnt k get def
-  psl_fnt (FS) search {pop pop pop /PSL_fmode 2 def} {pop /PSL_fmode 1 def} ifelse
-  psl_fnt cvx exec
+{ PSL_fnt k get cvx exec
   /PSL_height PSL_heights k get def
   PSL_placetext	{PSL_CT_placelabel} if
   PSL_clippath {PSL_CT_clippath} if
@@ -594,9 +592,7 @@ end
   /psl_xp PSL_txt_x psl_k get def
   /psl_yp PSL_txt_y psl_k get def
   /psl_label PSL_label_str psl_k get def
-  /psl_fnt PSL_label_font psl_k get def
-  psl_fnt cvx exec
-  psl_fnt (FS) search {pop pop pop /PSL_fmode 2 def} {pop /PSL_fmode 1 def} ifelse
+  PSL_label_font psl_k get cvx exec
   /PSL_height PSL_heights psl_k get def
   /psl_boxH PSL_height PSL_gap_y 2 mul add def
   /PSL_just PSL_label_justify psl_k get def
@@ -639,8 +635,7 @@ end
 {
     V psl_xp psl_yp T psl_angle R
     psl_SW PSL_justx mul psl_y0 M
-    psl_label dup sd neg 0 exch G
-    PSL_fmode 1 eq {show} {false charpath V S U fs N} ifelse
+    psl_label dup sd neg 0 exch G show
     U
 } def
 /PSL_nclip 0 def
@@ -662,7 +657,7 @@ V 0.06 0.06 scale
 
 /PSL_page_xsize 7370 def
 /PSL_page_ysize 5291 def
-/PSL_completion {} def
+/PSL_plot_completion {} def
 /PSL_movie_completion {} def
 %PSL_End_Header
 gsave
@@ -672,7 +667,7 @@ O0
 142 3732 TM
 
 % PostScript produced by:
-%@GMT: gmt psbasemap -JX6.0c/3.0c -Rg -Y7.9c -X0.3c -K '-Bwesn+tRCP2.6 0 cm'
+%@GMT: gmt psbasemap -JX6.0c/3.0c -Rg -Y7.9c -X0.3c -K '-Bwesn+tRCP2.6 AIS: 0 cm'
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %GMTBoundingBox: 8.50394 223.937 170.079 85.0394
 %%BeginObject PSL_Layer_1
@@ -697,7 +692,7 @@ P S
 (100°) sh add def
 1417 1417 PSL_H_y add M
 0 A
-(RCP2.6 0 cm) bc Z
+(RCP2.6 AIS: 0 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -9956,7 +9951,7 @@ O0
 520 0 TM
 
 % PostScript produced by:
-%@GMT: gmt psbasemap -JX6.0c/3.0c -Rg -X1.1c -O -K '-Bwesn+tRCP8.5 0 cm'
+%@GMT: gmt psbasemap -JX6.0c/3.0c -Rg -X1.1c -O -K '-Bwesn+tRCP8.5 AIS: 0 cm'
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_8
 0 setlinecap
@@ -9980,7 +9975,7 @@ P S
 (100°) sh add def
 1417 1417 PSL_H_y add M
 0 A
-(RCP8.5 0 cm) bc Z
+(RCP8.5 AIS: 0 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -19269,20 +19264,20 @@ N 0 1276 M 14 0 D S
 PSL_font_encode 0 get 0 eq {ISOLatin1+_Encoding /Helvetica /Helvetica PSL_reencode PSL_font_encode 0 1 put} if
 133 F0
 (\<0.1) sw mx
-(0.1­1) sw mx
-(1­10) sw mx
-(10­100) sw mx
+(0.1-1) sw mx
+(1-10) sw mx
+(10-100) sw mx
 (\>100) sw mx
 def
 /PSL_A0_y PSL_A0_y 25 add PSL_AH0 add def
 142 PSL_A0_y MM
 (\<0.1) mr Z
 425 PSL_A0_y MM
-(0.1­1) mr Z
+(0.1-1) mr Z
 709 PSL_A0_y MM
-(1­10) mr Z
+(1-10) mr Z
 992 PSL_A0_y MM
-(10­100) mr Z
+(10-100) mr Z
 1276 PSL_A0_y MM
 (\>100) mr Z
 N 0 142 M 7 0 D S
@@ -19378,7 +19373,7 @@ O0
 -6189 -1606 TM
 
 % PostScript produced by:
-%@GMT: gmt psbasemap -JX6.0c/3.0c -Rg -Y-3.4c -X-13.1c -O -K '-Bwesn+tRCP2.6 15 cm'
+%@GMT: gmt psbasemap -JX6.0c/3.0c -Rg -Y-3.4c -X-13.1c -O -K '-Bwesn+tRCP2.6 AIS: 15 cm'
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_15
 0 setlinecap
@@ -19402,7 +19397,7 @@ P S
 (100°) sh add def
 1417 1417 PSL_H_y add M
 0 A
-(RCP2.6 15 cm) bc Z
+(RCP2.6 AIS: 15 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -28752,7 +28747,7 @@ O0
 520 0 TM
 
 % PostScript produced by:
-%@GMT: gmt psbasemap -JX6.0c/3.0c -Rg -X1.1c -O -K '-Bwesn+tRCP8.5 30 cm'
+%@GMT: gmt psbasemap -JX6.0c/3.0c -Rg -X1.1c -O -K '-Bwesn+tRCP8.5 AIS: 30 cm'
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_23
 0 setlinecap
@@ -28776,7 +28771,7 @@ P S
 (100°) sh add def
 1417 1417 PSL_H_y add M
 0 A
-(RCP8.5 30 cm) bc Z
+(RCP8.5 AIS: 30 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -38219,20 +38214,20 @@ N 0 1276 M 14 0 D S
 PSL_font_encode 0 get 0 eq {ISOLatin1+_Encoding /Helvetica /Helvetica PSL_reencode PSL_font_encode 0 1 put} if
 133 F0
 (\<0.1) sw mx
-(0.1­1) sw mx
-(1­10) sw mx
-(10­100) sw mx
+(0.1-1) sw mx
+(1-10) sw mx
+(10-100) sw mx
 (\>100) sw mx
 def
 /PSL_A0_y PSL_A0_y 25 add PSL_AH0 add def
 142 PSL_A0_y MM
 (\<0.1) mr Z
 425 PSL_A0_y MM
-(0.1­1) mr Z
+(0.1-1) mr Z
 709 PSL_A0_y MM
-(1­10) mr Z
+(1-10) mr Z
 992 PSL_A0_y MM
-(10­100) mr Z
+(10-100) mr Z
 1276 PSL_A0_y MM
 (\>100) mr Z
 N 0 142 M 7 0 D S
@@ -38328,7 +38323,7 @@ O0
 -6189 -1606 TM
 
 % PostScript produced by:
-%@GMT: gmt psbasemap -JX6.0c/3.0c -Rg -Y-3.4c -X-13.1c -O -K '-Bwesn+tRCP2.6 30 cm'
+%@GMT: gmt psbasemap -JX6.0c/3.0c -Rg -Y-3.4c -X-13.1c -O -K '-Bwesn+tRCP2.6 AIS: 30 cm'
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_30
 0 setlinecap
@@ -38352,7 +38347,7 @@ P S
 (100°) sh add def
 1417 1417 PSL_H_y add M
 0 A
-(RCP2.6 30 cm) bc Z
+(RCP2.6 AIS: 30 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -47895,7 +47890,7 @@ O0
 520 0 TM
 
 % PostScript produced by:
-%@GMT: gmt psbasemap -JX6.0c/3.0c -Rg -X1.1c -O -K '-Bwesn+tRCP8.5 60 cm'
+%@GMT: gmt psbasemap -JX6.0c/3.0c -Rg -X1.1c -O -K '-Bwesn+tRCP8.5 AIS: 60 cm'
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_38
 0 setlinecap
@@ -47919,7 +47914,7 @@ P S
 (100°) sh add def
 1417 1417 PSL_H_y add M
 0 A
-(RCP8.5 60 cm) bc Z
+(RCP8.5 AIS: 60 cm) bc Z
 %%EndObject
 0 A
 FQ
@@ -57432,20 +57427,20 @@ N 0 1276 M 14 0 D S
 PSL_font_encode 0 get 0 eq {ISOLatin1+_Encoding /Helvetica /Helvetica PSL_reencode PSL_font_encode 0 1 put} if
 133 F0
 (\<0.1) sw mx
-(0.1­1) sw mx
-(1­10) sw mx
-(10­100) sw mx
+(0.1-1) sw mx
+(1-10) sw mx
+(10-100) sw mx
 (\>100) sw mx
 def
 /PSL_A0_y PSL_A0_y 25 add PSL_AH0 add def
 142 PSL_A0_y MM
 (\<0.1) mr Z
 425 PSL_A0_y MM
-(0.1­1) mr Z
+(0.1-1) mr Z
 709 PSL_A0_y MM
-(1­10) mr Z
+(1-10) mr Z
 992 PSL_A0_y MM
-(10­100) mr Z
+(10-100) mr Z
 1276 PSL_A0_y MM
 (\>100) mr Z
 N 0 142 M 7 0 D S
@@ -57562,9 +57557,17 @@ O0
 3.32551 setmiterlimit
 71 W
 0.122 0.467 0.706 C
+clipsave
+0 0 M
+1417 0 D
+0 472 D
+-1417 0 D
+P
+PSL_clip N
 0 387 M
 283 0 D
 S
+PSL_cliprestore
 %%EndObject
 0 A
 FQ
@@ -57580,9 +57583,17 @@ O0
 3.32551 setmiterlimit
 71 W
 0.173 0.627 0.173 C
+clipsave
+0 0 M
+1417 0 D
+0 472 D
+-1417 0 D
+P
+PSL_clip N
 0 236 M
 283 0 D
 S
+PSL_cliprestore
 %%EndObject
 0 A
 FQ
@@ -57598,9 +57609,17 @@ O0
 3.32551 setmiterlimit
 71 W
 1 0.498 0.0549 C
+clipsave
+0 0 M
+1417 0 D
+0 472 D
+-1417 0 D
+P
+PSL_clip N
 0 85 M
 283 0 D
 S
+PSL_cliprestore
 %%EndObject
 0 A
 FQ
