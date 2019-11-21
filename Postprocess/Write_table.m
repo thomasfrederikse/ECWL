@@ -6,7 +6,7 @@ javaaddpath('/Users/tfrederi/Scripts/matlab/Utils/20130227_xlwrite/poi_library/p
 javaaddpath('/Users/tfrederi/Scripts/matlab/Utils/20130227_xlwrite/poi_library/xmlbeans-2.3.0.jar');
 javaaddpath('/Users/tfrederi/Scripts/matlab/Utils/20130227_xlwrite/poi_library/dom4j-1.6.1.jar');
 
-table_file    = '/Users/tfrederi/Documents/Papers/global_extremes_overleaf/Revision_1/tables/result_table.xlsx';
+table_file    = '/Users/tfrederi//Documents/Papers/global_extremes_overleaf/DataCode/Results/result_table.xlsx';
 extremes_dir = '~/Data/Extremes/Paper/esl_scenarios/';
 filename_settings = strcat(extremes_dir,'settings.mat');
 load(filename_settings)

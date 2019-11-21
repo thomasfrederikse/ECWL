@@ -50,5 +50,9 @@ for scn=1:numel(scn_ant)
 end
 
 
+hist_idx = [-inf,0.25:0.25:1.5,inf]';
+tr_idx = (abs(loc_array(:,2))<=23.45);
+nt_idx = (abs(loc_array(:,2))>23.45);
 
+slr_all_frac(tr_idx)
 

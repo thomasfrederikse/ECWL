@@ -67,7 +67,7 @@ for yr=1:numel(settings.yearlist)
             clear result_array
             result_array = station_array;
             parfor i=1:numel(station_array)
-                result_lcl = mod_compute_extremes_stat.m(msl_proj_lcl,station_array(i),settings);
+                result_lcl = mod_compute_extremes_stat(msl_proj_lcl,station_array(i),settings);
                 % Store in final result array
                 result_array(i).slr        = result_lcl.msl;
                 result_array(i).gpd        = result_lcl.gpd;

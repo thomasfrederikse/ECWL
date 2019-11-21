@@ -81,7 +81,7 @@ ret_freq_mat(idx) = avg_exceed.*(1+(shape_mat(idx).*(estimate_mat(idx)-loc_fut_m
 % For each MC ensemble and height, compute expected return period, equal to MC mean return period for each height
 ret_freq_mean = nanmean(ret_freq_mat,2);
 
-% Remove very unlikely events before interpolation (solves numerical stuff)
+% Remove very unlikely events before interpolation (solves numerical problems)
 height_range  = height_range(ret_freq_mean>1e-6);
 ret_freq_mean = ret_freq_mean(ret_freq_mean>1e-6);
 
@@ -92,7 +92,6 @@ rc_fut_best = interp1(1./ret_freq_mean(isfinite(1./ret_freq_mean)),height_range(
 idx_af_time = find(settings.gpd_return_period == settings.amp_factor_year);
 idx_fut     = abs(rc_fut_best- rc_pd_mean(idx_af_time)) == min(abs(rc_fut_best - rc_pd_mean(idx_af_time)));
 amp_factor  = settings.amp_factor_year / settings.gpd_return_period(idx_fut);
-
 
 %% Allowance: best estimate return height change under constant return period
 idx_al_time = find(settings.gpd_return_period == settings.allowance_year);

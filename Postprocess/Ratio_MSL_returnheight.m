@@ -87,5 +87,15 @@ for scn=1:numel(scn_ant)
 end
 
 
+tr_idx = (abs(loc_array(:,2))<=23.45);
+nt_idx = (abs(loc_array(:,2))>23.45);
+
+hist_ntr = zeros(numel(hist_idx)-1,2);
+hist_tr =  zeros(numel(hist_idx)-1,2);
+hist_all = zeros(numel(hist_idx)-1,2);
+
+hist_ntr(:,2) = 5 + (0:25:150);
+hist_tr(:,2)  = 12.5 + (0:25:150);
+hist_all(:,2) = 20 + (0:25:150);
 
 
