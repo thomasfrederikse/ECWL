@@ -16,6 +16,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ## Contents
+ - Results: all mean sea level scenarios, amplification factors and allowances that result from our analysis 
+
  - MSL_scripts: Scripts used to compute mean sea-level changes from the AR5 estimates with a custom AIS contribution
 
  - GESLA_scripts: Scripts that read GESLA2 database, compute de-clustered extreme events above threshold, and save as '.mat' file for quick IO
