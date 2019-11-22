@@ -18,13 +18,27 @@
 function [station_array] = mod_determine_threshold(file_list,settings)
 station_array(1:numel(file_list)) = struct('lon',[]);
 
-parfor stat=1:numel(file_list)
-    disp(stat)
+for stat=1:numel(file_list)
     load_data = load(strcat(settings.stat_dir,file_list(stat).name),'station_data');
     station_data = load_data.station_data;
     station_array(stat).lon        = station_data.lon;
     station_array(stat).lat        = station_data.lat;
     station_array(stat).name       = station_data.name;
+    % Set station country
+    if strcmp(station_data.country,'Unspecified')
+        if strcmp(station_array(stat).name,'Bermuda')
+            station_array(stat).country = "United States of America";
+        else
+            name_str = strsplit(station_data.name,',');
+            station_array(stat).country = strtrim(name_str{end});     
+        end
+    elseif strcmp(station_data.country,'United States')
+        station_array(stat).country = "United States of America";
+    elseif strcmp(station_data.country,'USA')
+        station_array(stat).country = "United States of America";
+    else
+        station_array(stat).country = station_data.country;
+    end
     station_array(stat).filename   = strcat(file_list(stat).folder,'/',file_list(stat).name);
     if (settings.fix_threshold==false)
         p_list = zeros(numel(settings.threshold_range),1);

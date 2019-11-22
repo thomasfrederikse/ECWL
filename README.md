@@ -59,4 +59,4 @@ Contains the input load and the resulting sea-level fingerprints for uniform mas
 All modules called by other routines
 
 ## Results
-This directory contains netCDF files with all the mean sea level scenarios and the accompanying uncertainties. The file 'esl_results.xlsx' contains the estimated GPD parameters for each tide-gauge site, as well as the estimated 100-year amplification factor and allowance.
+This directory contains the results. The files 'allowance_table.pdf' and 'amp_factor_table.pdf' contain the allowances and amplification factors for each station and scenario shown in the main text. The folder also contains the netCDF files with all the mean sea level scenarios and the accompanying uncertainties. The file 'esl_results.xlsx' contains the estimated GPD parameters for each tide-gauge site, as well as the estimated 100-year amplification factor and allowance for all scenarios shown in the SUpplementary Information.

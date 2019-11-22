@@ -2,7 +2,7 @@
 rm *.ps
 ps=SI_msl_mean_2050.ps
 
-gmt set PS_MEDIA=Custom_15cx19.3c
+gmt set PS_MEDIA=Custom_15.3cx19.6c
 
 gmt set MAP_FRAME_WIDTH=0.06c
 gmt set MAP_FRAME_PEN=thinner,20/20/20
@@ -29,12 +29,13 @@ xback=-9.8c
 yjump=-2.65c
 yjump2=-2.65c
 #0
-gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2050.nc?total_slr[0] -Q -J$J -Rg -Y16.6c -X0.25c -K -Bwesn+t"RCP2.6" -nn -Cdivcpt.cpt > $ps
+gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2050.nc?total_slr[0] -Q -J$J -Rg -Y16.6c -X0.55c -K -Bwesn+t"RCP2.6" -nn -Cdivcpt.cpt > $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
-echo "180 0 0 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 0 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp45_2050.nc?total_slr[0] -Q -J$J -Rg -X$xjump -O -K -Bwesn+t"RCP4.5" -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
+echo "180 0 Emission scenario" |  gmt pstext -D0c/1.6c -R -J -N -F+f6,Helvetica-Bold+jCM -O -K >> $ps
 
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp85_2050.nc?total_slr[0] -Q -J$J -Rg -X$xjump -O -K -Bwesn+t"RCP8.5" -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
@@ -42,7 +43,7 @@ gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
 #R5
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2050.nc?total_slr[1] -Q -J$J -Rg -Y$yjump2 -X$xback -O -K -Bwesn -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
-echo "180 0 5 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 5 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp45_2050.nc?total_slr[1] -Q -J$J -Rg -X$xjump -O -K -Bwesn -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
@@ -53,7 +54,7 @@ gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
 #R10
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2050.nc?total_slr[2] -Q -J$J -Rg -Y$yjump2 -X$xback -O -K -Bwesn -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
-echo "180 0 10 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 10 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp45_2050.nc?total_slr[2] -Q -J$J -Rg -X$xjump -O -K -Bwesn -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
@@ -64,7 +65,8 @@ gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
 #R15
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2050.nc?total_slr[3] -Q -J$J -Rg -Y$yjump2 -X$xback -O -K -Bwesn -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
-echo "180 0 15 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 15 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
+echo "180 0 Antarctic Ice Sheet contribution" |  gmt pstext -D-2.85c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
 
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp45_2050.nc?total_slr[3] -Q -J$J -Rg -X$xjump -O -K -Bwesn -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
@@ -75,7 +77,7 @@ gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
 #R20
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2050.nc?total_slr[4] -Q -J$J -Rg -Y$yjump2 -X$xback -O -K -Bwesn -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
-echo "180 0 20 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 20 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp45_2050.nc?total_slr[4] -Q -J$J -Rg -X$xjump -O -K -Bwesn -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
@@ -86,7 +88,7 @@ gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
 #R30
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2050.nc?total_slr[5] -Q -J$J -Rg -Y$yjump2 -X$xback -O -K -Bwesn -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
-echo "180 0 30 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 30 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp45_2050.nc?total_slr[5] -Q -J$J -Rg -X$xjump -O -K -Bwesn -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
@@ -97,7 +99,7 @@ gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
 #R45
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp26_2050.nc?total_slr[6] -Q -J$J -Rg -Y$yjump2 -X$xback -O -K -Bwesn -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps
-echo "180 0 45 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 45 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt grdimage ~/Data/Extremes/Paper/msl_scenarios/msl_rcp45_2050.nc?total_slr[6] -Q -J$J -Rg -X$xjump -O -K -Bwesn -nn -Cdivcpt.cpt >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170  -K -O >> $ps

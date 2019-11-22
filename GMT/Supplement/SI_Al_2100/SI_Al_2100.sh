@@ -2,7 +2,7 @@
 rm *.ps
 ps=SI_Al_2100.ps
 
-gmt set PS_MEDIA=Custom_15cx21.9c
+gmt set PS_MEDIA=Custom_15.3cx22.2c
 
 gmt set MAP_FRAME_WIDTH=0.06c
 gmt set MAP_FRAME_PEN=thinner,20/20/20
@@ -20,7 +20,7 @@ gmt set FONT_LABEL                     = 6p,Helvetica,black
 gmt set FONT_LOGO                      = 6p,Helvetica,black
 gmt set FONT_TITLE                     = 6p,Helvetica,black
 
-gmt makecpt -Cviridis -D -T0/250/8.33333 > all_cpt.cpt
+gmt makecpt -Cviridis -I -D -T0/250/8.33333 > all_cpt.cpt
 
 J=X4.8c/2.4c
 xjump=4.9c
@@ -31,14 +31,15 @@ yjump2=-2.65c
 circrad=0.07c
 
 #AIS 0
-gmt psbasemap -K -J$J -Rg -Y19.2c -X0.25c -Bwesn+t"RCP2.6"  > $ps
+gmt psbasemap -K -J$J -Rg -Y19.2c -X0.55c -Bwesn+t"RCP2.6"  > $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy al_RCP26_0.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
-echo "180 0 0 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 0 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt psbasemap -J$J -Rg -X$xjump -O -K -Bwesn+t"RCP4.5" >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy al_RCP45_0.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
+echo "180 0 Emission scenario" |  gmt pstext -D0c/1.6c -R -J -N -F+f6,Helvetica-Bold+jCM -O -K >> $ps
 
 gmt psbasemap -J$J -Rg -X$xjump -O -K -Bwesn+t"RCP8.5" >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
@@ -48,7 +49,7 @@ gmt psxy al_RCP85_0.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
 gmt psbasemap -O -K -J$J -Rg -Y$yjump -X$xback -Bwesn  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy al_RCP26_0.15.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
-echo "180 0 15 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 15 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt psbasemap -J$J -Rg -X$xjump -O -K -Bwesn+t >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
@@ -62,7 +63,7 @@ gmt psxy al_RCP85_0.15.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
 gmt psbasemap -O -K -J$J -Rg -Y$yjump -X$xback -Bwesn  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy al_RCP26_0.3.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
-echo "180 0 30 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 30 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt psbasemap -J$J -Rg -X$xjump -O -K -Bwesn+t >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
@@ -76,7 +77,8 @@ gmt psxy al_RCP85_0.3.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
 gmt psbasemap -O -K -J$J -Rg -Y$yjump -X$xback -Bwesn  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy al_RCP26_0.45.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
-echo "180 0 45 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 45 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
+echo "180 0 Antarctic Ice Sheet contribution" |  gmt pstext -D-2.85c/-1.325c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
 
 gmt psbasemap -J$J -Rg -X$xjump -O -K -Bwesn+t >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
@@ -90,7 +92,7 @@ gmt psxy al_RCP85_0.45.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
 gmt psbasemap -O -K -J$J -Rg -Y$yjump -X$xback -Bwesn  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy al_RCP26_0.6.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
-echo "180 0 60 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 60 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt psbasemap -J$J -Rg -X$xjump -O -K -Bwesn+t >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
@@ -105,7 +107,7 @@ echo '7'
 gmt psbasemap -O -K -J$J -Rg -Y$yjump -X$xback -Bwesn  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy al_RCP26_0.9.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
-echo "180 0 90 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 90 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt psbasemap -J$J -Rg -X$xjump -O -K -Bwesn+t >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
@@ -119,7 +121,7 @@ gmt psxy al_RCP85_0.9.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
 gmt psbasemap -O -K -J$J -Rg -Y$yjump -X$xback -Bwesn  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy al_RCP26_1.2.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
-echo "180 0 120 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 120 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt psbasemap -J$J -Rg -X$xjump -O -K -Bwesn+t >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
@@ -133,7 +135,7 @@ gmt psxy al_RCP85_1.2.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
 gmt psbasemap -O -K -J$J -Rg -Y$yjump -X$xback -Bwesn  >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps
 gmt psxy al_RCP26_1.5.txt -R -J -O -K -Sc$circrad  -t35  -Call_cpt.cpt  >> $ps
-echo "180 0 150 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica-Bold+jCM+a90 -O -K >> $ps
+echo "180 0 150 cm" |  gmt pstext -D-2.55c/0c -R -J -N -F+f6,Helvetica+jCM+a90 -O -K >> $ps
 
 gmt psbasemap -J$J -Rg -X$xjump -O -K -Bwesn+t >> $ps
 gmt pscoast -R -J -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O >> $ps

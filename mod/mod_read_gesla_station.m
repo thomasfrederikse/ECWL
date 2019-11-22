@@ -116,9 +116,9 @@ if n>=settings.min_years
     end
     fclose(fileID);
     station_data.name = strtrim(header_info{2}(12:end));
+    station_data.country = strtrim(header_info{3}(10:end));
     station_data.lat = str2double(strtrim(header_info{5}(12:end)));
     station_data.lon = str2double(strtrim(header_info{6}(12:end)));
-     
     fprintf('done\n')
 
     % Save

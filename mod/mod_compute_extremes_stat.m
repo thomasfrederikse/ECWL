@@ -107,6 +107,7 @@ result_lcl.gpd.shape   = shape;
 result_lcl.gpd.loc     = loc;
 result_lcl.gpd.covmat  = gpd_covmat;
 result_lcl.gpd.par_pct = gpd_parameters_pct;
+result_lcl.gpd.avg_exceed = avg_exceed;
 
 result_lcl.pd.rc_obs   = [station_data.POT95_return_period(station_data.POT95_height>loc), extr_height] ;
 result_lcl.pd.rc_mean  = rc_pd_mean;

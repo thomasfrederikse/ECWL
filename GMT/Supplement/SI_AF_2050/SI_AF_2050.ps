@@ -1,11 +1,11 @@
 %!PS-Adobe-3.0
-%%BoundingBox: 0 0 425 547
-%%HiResBoundingBox: 0 0 425.1970 547.0870             
-%%Title: GMT v6.0.0 [64-bit] Document from psbasemap
+%%BoundingBox: 0 0 434 556
+%%HiResBoundingBox: 0 0 433.7010 555.5910             
+%%Title: GMT v6.0.0rc4 [64-bit] Document from psbasemap
 %%Creator: GMT6
 %%For: unknown
 %%DocumentNeededResources: font Helvetica
-%%CreationDate: Mon Jul 15 15:57:15 2019
+%%CreationDate: Thu Nov 21 15:33:24 2019
 %%LanguageLevel: 2
 %%DocumentData: Clean7Bit
 %%Orientation: Portrait
@@ -336,9 +336,7 @@ end
   n 0 eq {PSL_CT_drawline} if
 } def
 /PSL_CT_textline
-{ /psl_fnt PSL_fnt k get def
-  psl_fnt (FS) search {pop pop pop /PSL_fmode 2 def} {pop /PSL_fmode 1 def} ifelse
-  psl_fnt cvx exec
+{ PSL_fnt k get cvx exec
   /PSL_height PSL_heights k get def
   PSL_placetext	{PSL_CT_placelabel} if
   PSL_clippath {PSL_CT_clippath} if
@@ -594,9 +592,7 @@ end
   /psl_xp PSL_txt_x psl_k get def
   /psl_yp PSL_txt_y psl_k get def
   /psl_label PSL_label_str psl_k get def
-  /psl_fnt PSL_label_font psl_k get def
-  psl_fnt cvx exec
-  psl_fnt (FS) search {pop pop pop /PSL_fmode 2 def} {pop /PSL_fmode 1 def} ifelse
+  PSL_label_font psl_k get cvx exec
   /PSL_height PSL_heights psl_k get def
   /psl_boxH PSL_height PSL_gap_y 2 mul add def
   /PSL_just PSL_label_justify psl_k get def
@@ -639,8 +635,7 @@ end
 {
     V psl_xp psl_yp T psl_angle R
     psl_SW PSL_justx mul psl_y0 M
-    psl_label dup sd neg 0 exch G
-    PSL_fmode 1 eq {show} {false charpath V S U fs N} ifelse
+    psl_label dup sd neg 0 exch G show
     U
 } def
 /PSL_nclip 0 def
@@ -651,7 +646,7 @@ end
 
 %%BeginSetup
 /PSLevel /languagelevel where {pop languagelevel} {1} ifelse def
-PSLevel 1 gt { << /PageSize [425.197 547.087] /ImagingBBox null >> setpagedevice } if
+PSLevel 1 gt { << /PageSize [433.701 555.591] /ImagingBBox null >> setpagedevice } if
 %%EndSetup
 
 %%Page: 1 1
@@ -660,21 +655,21 @@ PSLevel 1 gt { << /PageSize [425.197 547.087] /ImagingBBox null >> setpagedevice
 V 0.06 0.06 scale
 %%EndPageSetup
 
-/PSL_page_xsize 7087 def
-/PSL_page_ysize 9118 def
-/PSL_completion {} def
+/PSL_page_xsize 7228 def
+/PSL_page_ysize 9260 def
+/PSL_plot_completion {} def
 /PSL_movie_completion {} def
 %PSL_End_Header
 gsave
 0 A
 FQ
 O0
-118 7843 TM
+260 7843 TM
 
 % PostScript produced by:
-%@GMT: gmt psbasemap -K -JX4.8c/2.4c -Rg -Y16.6c -X0.25c -Bwesn+tRCP2.6
+%@GMT: gmt psbasemap -K -JX4.8c/2.4c -Rg -Y16.6c -X0.55c -Bwesn+tRCP2.6
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%GMTBoundingBox: 7.08661 470.551 136.063 68.0315
+%GMTBoundingBox: 15.5906 470.551 136.063 68.0315
 %%BeginObject PSL_Layer_1
 0 setlinecap
 0 setlinejoin
@@ -10144,14 +10139,14 @@ O0
 0 0 TM
 
 % PostScript produced by:
-%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica-Bold+jCM+a90 -O -K
+%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica+jCM+a90 -O -K
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
 %%BeginObject PSL_Layer_4
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
-PSL_font_encode 1 get 0 eq {ISOLatin1+_Encoding /Helvetica-Bold /Helvetica-Bold PSL_reencode PSL_font_encode 1 1 put} if
--71 567 M 100 F1
+-71 567 M PSL_font_encode 0 get 0 eq {ISOLatin1+_Encoding /Helvetica /Helvetica PSL_reencode PSL_font_encode 0 1 put} if
+100 F0
 V 90 R (0 cm) mc Z U
 %%EndObject
 0 A
@@ -19628,12 +19623,28 @@ PSL_cliprestore
 0 A
 FQ
 O0
+0 0 TM
+
+% PostScript produced by:
+%@GMT: gmt pstext -D0c/1.6c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica-Bold+jCM -O -K
+%@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
+%%BeginObject PSL_Layer_8
+0 setlinecap
+0 setlinejoin
+3.32551 setmiterlimit
+PSL_font_encode 1 get 0 eq {ISOLatin1+_Encoding /Helvetica-Bold /Helvetica-Bold PSL_reencode PSL_font_encode 1 1 put} if
+1134 1323 M 100 F1
+(Emission scenario) mc Z
+%%EndObject
+0 A
+FQ
+O0
 2315 0 TM
 
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn+tRCP8.5
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_8
+%%BeginObject PSL_Layer_9
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -19665,7 +19676,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_9
+%%BeginObject PSL_Layer_10
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -28229,7 +28240,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP85_0.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_10
+%%BeginObject PSL_Layer_11
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -29091,7 +29102,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -O -K -JX4.8c/2.4c -Rg -Y-2.65c -X-9.8c -Bwesn
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_11
+%%BeginObject PSL_Layer_12
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -29118,7 +29129,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_12
+%%BeginObject PSL_Layer_13
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -37682,7 +37693,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP26_0.05.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_13
+%%BeginObject PSL_Layer_14
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -38538,14 +38549,14 @@ O0
 0 0 TM
 
 % PostScript produced by:
-%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica-Bold+jCM+a90 -O -K
+%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica+jCM+a90 -O -K
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_14
+%%BeginObject PSL_Layer_15
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
-PSL_font_encode 1 get 0 eq {ISOLatin1+_Encoding /Helvetica-Bold /Helvetica-Bold PSL_reencode PSL_font_encode 1 1 put} if
--71 567 M 100 F1
+-71 567 M PSL_font_encode 0 get 0 eq {ISOLatin1+_Encoding /Helvetica /Helvetica PSL_reencode PSL_font_encode 0 1 put} if
+100 F0
 V 90 R (5 cm) mc Z U
 %%EndObject
 0 A
@@ -38556,7 +38567,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn+t
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_15
+%%BeginObject PSL_Layer_16
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -38583,7 +38594,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_16
+%%BeginObject PSL_Layer_17
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -47147,7 +47158,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP45_0.05.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_17
+%%BeginObject PSL_Layer_18
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -48002,7 +48013,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_18
+%%BeginObject PSL_Layer_19
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -48029,7 +48040,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_19
+%%BeginObject PSL_Layer_20
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -56593,7 +56604,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP85_0.05.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_20
+%%BeginObject PSL_Layer_21
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -57433,7 +57444,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -O -K -JX4.8c/2.4c -Rg -Y-2.65c -X-9.8c -Bwesn
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_21
+%%BeginObject PSL_Layer_22
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -57460,7 +57471,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_22
+%%BeginObject PSL_Layer_23
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -66024,7 +66035,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP26_0.1.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_23
+%%BeginObject PSL_Layer_24
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -66857,14 +66868,14 @@ O0
 0 0 TM
 
 % PostScript produced by:
-%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica-Bold+jCM+a90 -O -K
+%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica+jCM+a90 -O -K
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_24
+%%BeginObject PSL_Layer_25
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
-PSL_font_encode 1 get 0 eq {ISOLatin1+_Encoding /Helvetica-Bold /Helvetica-Bold PSL_reencode PSL_font_encode 1 1 put} if
--71 567 M 100 F1
+-71 567 M PSL_font_encode 0 get 0 eq {ISOLatin1+_Encoding /Helvetica /Helvetica PSL_reencode PSL_font_encode 0 1 put} if
+100 F0
 V 90 R (10 cm) mc Z U
 %%EndObject
 0 A
@@ -66875,7 +66886,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn+t
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_25
+%%BeginObject PSL_Layer_26
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -66902,7 +66913,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_26
+%%BeginObject PSL_Layer_27
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -75466,7 +75477,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP45_0.1.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_27
+%%BeginObject PSL_Layer_28
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -76299,7 +76310,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_28
+%%BeginObject PSL_Layer_29
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -76326,7 +76337,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_29
+%%BeginObject PSL_Layer_30
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -84890,7 +84901,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP85_0.1.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_30
+%%BeginObject PSL_Layer_31
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -85708,7 +85719,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -O -K -JX4.8c/2.4c -Rg -Y-2.65c -X-9.8c -Bwesn
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_31
+%%BeginObject PSL_Layer_32
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -85735,7 +85746,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_32
+%%BeginObject PSL_Layer_33
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -94299,7 +94310,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP26_0.15.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_33
+%%BeginObject PSL_Layer_34
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -95109,15 +95120,31 @@ O0
 0 0 TM
 
 % PostScript produced by:
-%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica-Bold+jCM+a90 -O -K
+%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica+jCM+a90 -O -K
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_34
+%%BeginObject PSL_Layer_35
+0 setlinecap
+0 setlinejoin
+3.32551 setmiterlimit
+-71 567 M PSL_font_encode 0 get 0 eq {ISOLatin1+_Encoding /Helvetica /Helvetica PSL_reencode PSL_font_encode 0 1 put} if
+100 F0
+V 90 R (15 cm) mc Z U
+%%EndObject
+0 A
+FQ
+O0
+0 0 TM
+
+% PostScript produced by:
+%@GMT: gmt pstext -D-2.85c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica-Bold+jCM+a90 -O -K
+%@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
+%%BeginObject PSL_Layer_36
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
 PSL_font_encode 1 get 0 eq {ISOLatin1+_Encoding /Helvetica-Bold /Helvetica-Bold PSL_reencode PSL_font_encode 1 1 put} if
--71 567 M 100 F1
-V 90 R (15 cm) mc Z U
+-213 567 M 100 F1
+V 90 R (Antarctic Ice Sheet contribution) mc Z U
 %%EndObject
 0 A
 FQ
@@ -95127,7 +95154,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn+t
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_35
+%%BeginObject PSL_Layer_37
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -95154,7 +95181,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_36
+%%BeginObject PSL_Layer_38
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -103718,7 +103745,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP45_0.15.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_37
+%%BeginObject PSL_Layer_39
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -104521,7 +104548,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_38
+%%BeginObject PSL_Layer_40
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -104548,7 +104575,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_39
+%%BeginObject PSL_Layer_41
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -113112,7 +113139,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP85_0.15.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_40
+%%BeginObject PSL_Layer_42
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -113894,7 +113921,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -O -K -JX4.8c/2.4c -Rg -Y-2.65c -X-9.8c -Bwesn
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_41
+%%BeginObject PSL_Layer_43
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -113921,7 +113948,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_42
+%%BeginObject PSL_Layer_44
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -122485,7 +122512,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP26_0.2.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_43
+%%BeginObject PSL_Layer_45
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -123253,14 +123280,14 @@ O0
 0 0 TM
 
 % PostScript produced by:
-%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica-Bold+jCM+a90 -O -K
+%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica+jCM+a90 -O -K
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_44
+%%BeginObject PSL_Layer_46
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
-PSL_font_encode 1 get 0 eq {ISOLatin1+_Encoding /Helvetica-Bold /Helvetica-Bold PSL_reencode PSL_font_encode 1 1 put} if
--71 567 M 100 F1
+-71 567 M PSL_font_encode 0 get 0 eq {ISOLatin1+_Encoding /Helvetica /Helvetica PSL_reencode PSL_font_encode 0 1 put} if
+100 F0
 V 90 R (20 cm) mc Z U
 %%EndObject
 0 A
@@ -123271,7 +123298,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn+t
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_45
+%%BeginObject PSL_Layer_47
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -123298,7 +123325,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_46
+%%BeginObject PSL_Layer_48
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -131862,7 +131889,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP45_0.2.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_47
+%%BeginObject PSL_Layer_49
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -132626,7 +132653,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_48
+%%BeginObject PSL_Layer_50
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -132653,7 +132680,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_49
+%%BeginObject PSL_Layer_51
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -141217,7 +141244,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP85_0.2.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_50
+%%BeginObject PSL_Layer_52
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -141963,7 +141990,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -O -K -JX4.8c/2.4c -Rg -Y-2.65c -X-9.8c -Bwesn
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_51
+%%BeginObject PSL_Layer_53
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -141990,7 +142017,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_52
+%%BeginObject PSL_Layer_54
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -150554,7 +150581,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP26_0.3.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_53
+%%BeginObject PSL_Layer_55
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -151259,14 +151286,14 @@ O0
 0 0 TM
 
 % PostScript produced by:
-%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica-Bold+jCM+a90 -O -K
+%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica+jCM+a90 -O -K
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_54
+%%BeginObject PSL_Layer_56
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
-PSL_font_encode 1 get 0 eq {ISOLatin1+_Encoding /Helvetica-Bold /Helvetica-Bold PSL_reencode PSL_font_encode 1 1 put} if
--71 567 M 100 F1
+-71 567 M PSL_font_encode 0 get 0 eq {ISOLatin1+_Encoding /Helvetica /Helvetica PSL_reencode PSL_font_encode 0 1 put} if
+100 F0
 V 90 R (30 cm) mc Z U
 %%EndObject
 0 A
@@ -151277,7 +151304,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn+t
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_55
+%%BeginObject PSL_Layer_57
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -151304,7 +151331,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_56
+%%BeginObject PSL_Layer_58
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -159868,7 +159895,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP45_0.3.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_57
+%%BeginObject PSL_Layer_59
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -160568,7 +160595,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_58
+%%BeginObject PSL_Layer_60
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -160595,7 +160622,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_59
+%%BeginObject PSL_Layer_61
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -169159,7 +169186,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP85_0.3.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_60
+%%BeginObject PSL_Layer_62
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -169845,7 +169872,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -O -K -JX4.8c/2.4c -Rg -Y-2.65c -X-9.8c -Bwesn
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_61
+%%BeginObject PSL_Layer_63
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -169872,7 +169899,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_62
+%%BeginObject PSL_Layer_64
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -178436,7 +178463,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP26_0.45.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_63
+%%BeginObject PSL_Layer_65
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -179076,14 +179103,14 @@ O0
 0 0 TM
 
 % PostScript produced by:
-%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica-Bold+jCM+a90 -O -K
+%@GMT: gmt pstext -D-2.55c/0c -Rg -JX4.8c/2.4c -N -F+f6,Helvetica+jCM+a90 -O -K
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_64
+%%BeginObject PSL_Layer_66
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
-PSL_font_encode 1 get 0 eq {ISOLatin1+_Encoding /Helvetica-Bold /Helvetica-Bold PSL_reencode PSL_font_encode 1 1 put} if
--71 567 M 100 F1
+-71 567 M PSL_font_encode 0 get 0 eq {ISOLatin1+_Encoding /Helvetica /Helvetica PSL_reencode PSL_font_encode 0 1 put} if
+100 F0
 V 90 R (45 cm) mc Z U
 %%EndObject
 0 A
@@ -179094,7 +179121,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn+t
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_65
+%%BeginObject PSL_Layer_67
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -179121,7 +179148,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_66
+%%BeginObject PSL_Layer_68
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -187685,7 +187712,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP45_0.45.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_67
+%%BeginObject PSL_Layer_69
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -188319,7 +188346,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psbasemap -JX4.8c/2.4c -Rg -X4.9c -O -K -Bwesn
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_68
+%%BeginObject PSL_Layer_70
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -188346,7 +188373,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt pscoast -Rg -JX4.8c/2.4c -Dc -A5000/0/1+ai -G170/170/170 -S#c6dbef -K -O
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_69
+%%BeginObject PSL_Layer_71
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
@@ -196910,7 +196937,7 @@ O0
 % PostScript produced by:
 %@GMT: gmt psxy af_RCP85_0.45.txt -Rg -JX4.8c/2.4c -O -K -Sc0.07c -t35 -Camp_cpt.cpt
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_70
+%%BeginObject PSL_Layer_72
 0.65 /Normal PSL_transp
 0 setlinecap
 0 setlinejoin
@@ -197528,13 +197555,13 @@ O0
 0 0 TM
 
 % PostScript produced by:
-%@GMT: gmt psscale -Dx-5.9c/-0.4c+w6.8c/0.2c+ef+h -Rg -JX4.8c/2.4c -Camp_cpt.cpt -B10 -By -O -K
+%@GMT: gmt psscale -Dx-5.9c/-0.3c+w6.8c/0.2c+ef+h -Rg -JX4.8c/2.4c -Camp_cpt.cpt -B10 -By -O -K
 %@PROJ: latlong 0.00000000 360.00000000 -90.00000000 90.00000000 -180.000 180.000 -90.000 90.000 +proj=latlong +a=6378137.000 +b=6356752.314245 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
-%%BeginObject PSL_Layer_71
+%%BeginObject PSL_Layer_73
 0 setlinecap
 0 setlinejoin
 3.32551 setmiterlimit
--2787 -189 T
+-2787 -142 T
 8 W
 0.0784 A
 V N 0 0 T 3213 94 scale /DeviceRGB setcolorspace
@@ -197609,5 +197636,5 @@ def
 (100) bc Z
 /PSL_LH 0 def /PSL_L_y PSL_A0_y PSL_A1_y mx def
 0 setlinecap
-2787 189 T
+2787 142 T
 %%EndObject
